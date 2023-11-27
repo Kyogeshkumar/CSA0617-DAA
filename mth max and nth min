@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int findMinMax(int arr[], int size, int m, int n) {
+    int max = arr[0];
+    int min = arr[0];
+    int i;
+
+    for (i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    printf("The mth maximum number is: %d\n", max);
+    printf("The nth minimum number is: %d\n", min);
+
+    int sum = max + min;
+    int diff = max - min;
+
+    printf("The sum of the mth maximum and nth minimum numbers is: %d\n", sum);
+    printf("The difference between the mth maximum and nth minimum numbers is: %d\n", diff);
+}
+
+int main() {
+    int arr[] = {16,16,16,16,16};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int m = 0;
+    int n = 1;
+
+    findMinMax(arr, size, m, n);
+
+    return 0;
+}
